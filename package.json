@@ -1,0 +1,40 @@
+{
+  "name": "hooshek-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "test:clean": "jest --clear-cache && jest",
+    "lint": "eslint ./",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier -c ./",
+    "format:fix": "prettier --write ./",
+    "dev": "next dev ./src",
+    "build": "next build ./src",
+    "start": "next start ./src"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1138.0",
+    "global": "^4.4.0",
+    "js-yaml": "^4.1.0",
+    "next": "12.1.6",
+    "next-transpile-modules": "^9.0.0",
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "17.0.33",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.4",
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.15.0",
+    "eslint-config-next": "12.1.6",
+    "jest": "^28.1.0",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24",
+    "ts-jest": "^28.0.2",
+    "typescript": "4.6.4"
+  }
+}
