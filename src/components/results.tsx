@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { RaceResults } from '../services/interfaces/results.interface';
+import { EventRaceResults } from '../services/interfaces/results.interface';
 import { Race } from './race';
 import { Search } from './search';
 
 export type ResultsProps = {
-  results: RaceResults;
+  results: EventRaceResults;
 };
 
 export const Results = ({ results }: ResultsProps): JSX.Element => {

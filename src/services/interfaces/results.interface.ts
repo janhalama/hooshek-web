@@ -1,4 +1,4 @@
-export type RaceResults = {
+export type EventRaceResults = {
   date: Date;
   name: string;
   races: RaceResult[];

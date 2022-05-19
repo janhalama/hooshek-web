@@ -3,23 +3,23 @@ import { Layout } from '../components/layouts/layout';
 import { Results } from '../components/results';
 import { parseResults } from '../services/results.service';
 import {
-  loadListOfRaceResultKeys,
-  loadRaceResultYaml,
+  loadEventRaceResultsYaml,
+  loadListOfEventKeys,
 } from '../services/s3.service';
 
 type HomeProps = {
-  races: string[];
-  raceResultYaml: string;
+  events: string[];
+  selectedEventRaceResultsYaml: string;
 };
 
-const Home = ({ raceResultYaml }: HomeProps) => {
+const Home = ({ selectedEventRaceResultsYaml }: HomeProps) => {
   return (
     <Layout>
       <Head>
         <title>Výsledky | Sokol Skuhrov</title>
       </Head>
-      {raceResultYaml ? (
-        <Results results={parseResults(raceResultYaml)} />
+      {selectedEventRaceResultsYaml ? (
+        <Results results={parseResults(selectedEventRaceResultsYaml)} />
       ) : (
         <div>Žádné výsledky nebyly nahrány.</div>
       )}
@@ -28,19 +28,19 @@ const Home = ({ raceResultYaml }: HomeProps) => {
 };
 
 export async function getServerSideProps() {
-  const keys = await loadListOfRaceResultKeys();
+  const keys = await loadListOfEventKeys();
   keys.sort().reverse(); //each reace key starts with date in ISO format, we want to have latest races first
 
-  let raceResultYaml = null;
+  let selectedEventRaceResultsYaml = null;
 
   if (keys.length) {
-    raceResultYaml = await loadRaceResultYaml(keys[0]);
+    selectedEventRaceResultsYaml = await loadEventRaceResultsYaml(keys[0]);
   }
 
   return {
     props: {
-      races: keys,
-      raceResultYaml,
+      events: keys,
+      selectedEventRaceResultsYaml,
     },
   };
 }

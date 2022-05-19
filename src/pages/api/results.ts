@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { parseResults } from '../../services/results.service';
-import { uploadRaceResults } from '../../services/s3.service';
+import { uploadEventRaceResultsYaml } from '../../services/s3.service';
 
 type Result = {
   success: boolean;
@@ -42,7 +42,7 @@ export default async function handler(
   try {
     const results = parseResults(req.body);
 
-    await uploadRaceResults(
+    await uploadEventRaceResultsYaml(
       `${results.date.toISOString()} ${results.name}`,
       req.body
     );

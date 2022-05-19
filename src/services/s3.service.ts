@@ -9,8 +9,8 @@ export const createS3Client = (): S3 => {
   });
 };
 
-export const uploadRaceResults = async (key: string, body: any) => {
-  const bucketName = getRaceResultsBucketName();
+export const uploadEventRaceResultsYaml = async (key: string, body: any) => {
+  const bucketName = getEventsBucketName();
   const client = createS3Client();
 
   await client
@@ -22,8 +22,8 @@ export const uploadRaceResults = async (key: string, body: any) => {
     .promise();
 };
 
-export const loadListOfRaceResultKeys = async (): Promise<string[]> => {
-  const bucketName = getRaceResultsBucketName();
+export const loadListOfEventKeys = async (): Promise<string[]> => {
+  const bucketName = getEventsBucketName();
   const client = createS3Client();
 
   const result = await client
@@ -39,10 +39,10 @@ export const loadListOfRaceResultKeys = async (): Promise<string[]> => {
   return keys || [];
 };
 
-export const loadRaceResultYaml = async (
+export const loadEventRaceResultsYaml = async (
   key: string
 ): Promise<string | null> => {
-  const bucketName = getRaceResultsBucketName();
+  const bucketName = getEventsBucketName();
   const client = createS3Client();
 
   const result = await client
@@ -55,7 +55,7 @@ export const loadRaceResultYaml = async (
   return result.Body?.toString() || null;
 };
 
-const getRaceResultsBucketName = () => {
+const getEventsBucketName = () => {
   if (!process.env.AWS_S3_BUCKET_NAME) {
     throw Error('AWS_S3_BUCKET_NAME variable not configured');
   }
