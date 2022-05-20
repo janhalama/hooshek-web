@@ -23,7 +23,7 @@ export const Layout = ({ children }: Props): JSX.Element => {
             <Image src={logo} alt="Sokol Skuhrov" width="20" height="20" />
             <span className="mx-2 text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2022{' '}
-              <a href="https://sokolskuhrov.cz" className="hover:underline">
+              <a href="https://www.sokolskuhrov.cz" className="hover:underline">
                 T.J. Sokol Skuhrov
               </a>
             </span>
