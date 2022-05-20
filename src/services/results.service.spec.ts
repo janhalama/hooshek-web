@@ -1,6 +1,6 @@
 import { parseResults } from './results.service';
 
-describe('loadResults', () => {
+describe('parseResults', () => {
   const resultsYaml = `date: 2022-02-20
 name: Skuhrovská lyže
 races:
