@@ -1,4 +1,4 @@
-import { S3 } from 'aws-sdk';
+import S3 from 'aws-sdk/clients/S3';
 
 export const createS3Client = (): S3 => {
   return new S3({
