@@ -9,8 +9,8 @@ export const Search = ({ setAthleteSearch }: SearchProps): JSX.Element => {
     setAthleteSearch(e.target.value);
   };
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <div className="p-4">
+    <div className="relative overflow-x-auto">
+      <div className="pt-4">
         <label htmlFor="table-search" className="sr-only">
           Hledej
         </label>
