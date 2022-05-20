@@ -20,7 +20,7 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
   if (filteredAthletes.length > 0) {
     return (
       <div>
-        <div className="dark:bg-gray-700 rounded-t-lg py-3 px-3  mb-0 text-base text-white my-5">
+        <div className="dark:bg-gray-700 rounded-t-lg py-3 px-3  mb-0 text-base text-gray-200 my-5">
           {race.name} | {race.distance}
         </div>
         <table className="w-full flex flex-row flex-no-wrap sm:bg-white overflow-hidden sm:shadow-lg ">
