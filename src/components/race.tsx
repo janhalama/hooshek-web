@@ -21,7 +21,7 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
     return (
       <div>
         <div className="dark:bg-gray-700 bg-gray-200 rounded-t-lg py-3 px-3  mb-0 text-base dark:text-white my-5">
-          {race.name} | {race.distance}
+          {race.name} | Trať {race.distance}
         </div>
         <table className="w-full flex flex-row flex-no-wrap sm:bg-white overflow-hidden sm:shadow-lg ">
           <thead className="text-black">
@@ -31,8 +31,10 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
                   key={`header_${race.name}_${athlete.surname}_${athlete.name}_${athlete.rank}`}
                   className="dark:bg-gray-300 flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0"
                 >
-                  <th className="p-3 truncate">Umístění</th>
+                  <th className="p-3 truncate">#</th>
+                  <th className="p-3 truncate">S</th>
                   <th className="p-3 truncate">Jméno</th>
+                  <th className="p-3 truncate">Nar.</th>
                   <th className="p-3 truncate">Čas</th>
                   <th className="p-3 truncate">Ztráta</th>
                 </tr>
@@ -46,11 +48,17 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
                   key={`${race.name}_${athlete.surname}_${athlete.name}_${athlete.rank}`}
                   className="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0"
                 >
-                  <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                  <td className="border-grey-light border hover:bg-gray-100 p-3 truncate sm:text-center">
                     {athlete.rank ? athlete.rank : 'DNS'}
+                  </td>
+                  <td className="border-grey-light border hover:bg-gray-100 p-3 truncate sm:text-center">
+                    {athlete.rank_sokol ? athlete.rank_sokol : ''}&nbsp;
                   </td>
                   <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
                     {`${athlete.name} ${athlete.surname}`}
+                  </td>
+                  <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                    {athlete.born}
                   </td>
                   <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
                     {athlete.time}&nbsp;
