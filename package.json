@@ -14,6 +14,8 @@
     "start": "next start ./src"
   },
   "dependencies": {
+    "ajv": "^8.11.0",
+    "ajv-formats": "^2.1.1",
     "aws-sdk": "^2.1138.0",
     "global": "^4.4.0",
     "js-yaml": "^4.1.0",
