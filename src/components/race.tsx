@@ -35,6 +35,7 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
                   <th className="p-3 truncate">S</th>
                   <th className="p-3 truncate">Jméno</th>
                   <th className="p-3 truncate">Nar.</th>
+                  <th className="p-3 truncate">Klub</th>
                   <th className="p-3 truncate">Čas</th>
                   <th className="p-3 truncate">Ztráta</th>
                 </tr>
@@ -59,6 +60,9 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
                   </td>
                   <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
                     {athlete.born}
+                  </td>
+                  <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
+                    {athlete.club}&nbsp;
                   </td>
                   <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
                     {athlete.time}&nbsp;
