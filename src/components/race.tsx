@@ -21,7 +21,9 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
     return (
       <div>
         <div className="dark:bg-gray-700 bg-gray-200 rounded-t-lg py-3 px-3  mb-0 text-base dark:text-white my-5">
-          {race.name} | Trať {race.distance}
+          {race.desc
+            ? `${race.name} | ${race.distance} | ${race.desc}`
+            : `${race.name} | ${race.distance}`}
         </div>
         <table className="w-full flex flex-row flex-no-wrap sm:bg-white overflow-hidden sm:shadow-lg ">
           <thead className="text-black">
@@ -34,7 +36,6 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
                   <th className="p-3 truncate">#</th>
                   <th className="p-3 truncate">S</th>
                   <th className="p-3 truncate">Jméno</th>
-                  <th className="p-3 truncate">Nar.</th>
                   <th className="p-3 truncate">Klub</th>
                   <th className="p-3 truncate">Čas</th>
                   <th className="p-3 truncate">Ztráta</th>
@@ -57,9 +58,6 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
                   </td>
                   <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
                     {`${athlete.name} ${athlete.surname}`}
-                  </td>
-                  <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
-                    {athlete.born}
                   </td>
                   <td className="border-grey-light border hover:bg-gray-100 p-3 truncate">
                     {athlete.club}&nbsp;
