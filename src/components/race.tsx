@@ -22,7 +22,7 @@ export const Race = ({ race, athleteSearch }: ResultsProps): JSX.Element => {
       <div>
         <div className="dark:bg-gray-700 bg-gray-200 rounded-t-lg py-3 px-3  mb-0 text-base dark:text-white my-5">
           {race.desc
-            ? `${race.name} | ${race.distance} | ${race.desc}`
+            ? `${race.name} ${race.desc} | ${race.distance}`
             : `${race.name} | ${race.distance}`}
         </div>
         <table className="w-full flex flex-row flex-no-wrap sm:bg-white overflow-hidden sm:shadow-lg ">
