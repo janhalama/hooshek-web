@@ -2,6 +2,9 @@
   "name": "hooshek-web",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "test": "jest",
     "test:clean": "jest --clear-cache && jest",
