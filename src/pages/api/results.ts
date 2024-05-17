@@ -27,7 +27,7 @@ export default async function handler(
     if (req.headers['content-type'] !== 'application/yaml') {
       return res.status(415).json({
         message: 'Unsupported media type',
-        detail: `Media type ${req.headers['content-type']} not supported. Supported media types: application/yaml, text/yaml`,
+        detail: `Media type ${req.headers['content-type']} not supported. Supported media types: application/yaml`,
       });
     }
 
